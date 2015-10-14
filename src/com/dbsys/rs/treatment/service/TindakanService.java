@@ -35,4 +35,13 @@ public interface TindakanService {
 	 */
 	List<Tindakan> getAll();
 
+	/**
+	 * Mengambil semua tindakan berdasarkan keyword.
+	 * 
+	 * @param keyword
+	 * 
+	 * @return daftar tindakan
+	 */
+	List<Tindakan> get(String keyword);
+
 }

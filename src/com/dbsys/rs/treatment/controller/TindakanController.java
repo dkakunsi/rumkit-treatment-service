@@ -40,6 +40,13 @@ public class TindakanController {
 		return RestMessage.success();
 	}
 	
+	@RequestMapping(method = RequestMethod.GET, value = "/keyword/{keyword}")
+	@ResponseBody
+	public ListEntityRestMessage<Tindakan> get(@PathVariable String keyword) throws ApplicationException, PersistenceException {
+		List<Tindakan> list = tindakanService.get(keyword);
+		return ListEntityRestMessage.createListTindakan(list);
+	}
+	
 	@RequestMapping(method = RequestMethod.GET)
 	@ResponseBody
 	public ListEntityRestMessage<Tindakan> getAll() throws ApplicationException, PersistenceException {

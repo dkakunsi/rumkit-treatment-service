@@ -76,7 +76,7 @@ public class TindakanControllerTest {
 		tindakan.setSatuan(Satuan.TINDAKAN);
 		tindakan.setTanggungan(Tanggungan.BPJS);
 		tindakan.setTarif(500000l);
-		tindakanService.save(tindakan);
+		tindakan = tindakanService.save(tindakan);
 		assertEquals(count + 1, tindakanRepository.count());
 	}
 	
@@ -121,6 +121,26 @@ public class TindakanControllerTest {
 	public void testGetAll() throws Exception {
 		this.mockMvc.perform(
 				get("/tindakan")
+				.contentType(MediaType.APPLICATION_JSON)
+			)
+			.andExpect(jsonPath("$.tipe").value("LIST"))
+			.andExpect(jsonPath("$.message").value("Berhasil"));
+	}
+
+	@Test
+	public void testCariKode() throws Exception {
+		this.mockMvc.perform(
+				get(String.format("/tindakan/keyword/%s", tindakan.getKode()))
+				.contentType(MediaType.APPLICATION_JSON)
+			)
+			.andExpect(jsonPath("$.tipe").value("LIST"))
+			.andExpect(jsonPath("$.message").value("Berhasil"));
+	}
+
+	@Test
+	public void testCariNama() throws Exception {
+		this.mockMvc.perform(
+				get(String.format("/tindakan/keyword/%s", tindakan.getNama()))
 				.contentType(MediaType.APPLICATION_JSON)
 			)
 			.andExpect(jsonPath("$.tipe").value("LIST"))

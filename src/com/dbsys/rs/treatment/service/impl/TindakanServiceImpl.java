@@ -33,4 +33,9 @@ public class TindakanServiceImpl implements TindakanService {
 	public List<Tindakan> getAll() {
 		return tindakanRepository.findAll();
 	}
+
+	@Override
+	public List<Tindakan> get(String keyword) {
+		return tindakanRepository.findByKodeContainingOrNamaContaining(keyword, keyword);
+	}
 }
