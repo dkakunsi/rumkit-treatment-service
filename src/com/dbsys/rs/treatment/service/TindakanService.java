@@ -2,6 +2,7 @@ package com.dbsys.rs.treatment.service;
 
 import java.util.List;
 
+import com.dbsys.rs.lib.Kelas;
 import com.dbsys.rs.lib.entity.Tindakan;
 
 /**
@@ -43,5 +44,13 @@ public interface TindakanService {
 	 * @return daftar tindakan
 	 */
 	List<Tindakan> get(String keyword);
+
+	/**
+	 * 
+	 * @param nama
+	 * @param kelas
+	 * @return
+	 */
+	Tindakan get(String nama, Kelas kelas);
 
 }

@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.dbsys.rs.lib.ApplicationException;
 import com.dbsys.rs.lib.EntityRestMessage;
+import com.dbsys.rs.lib.Kelas;
 import com.dbsys.rs.lib.ListEntityRestMessage;
 import com.dbsys.rs.lib.RestMessage;
 import com.dbsys.rs.lib.entity.Tindakan;
@@ -38,6 +39,13 @@ public class TindakanController {
 	public RestMessage delete(@PathVariable Long id) throws ApplicationException, PersistenceException {
 		tindakanService.delete(id);
 		return RestMessage.success();
+	}
+	
+	@RequestMapping(method = RequestMethod.GET, value = "/nama/{nama}/kelas/{kelas}")
+	@ResponseBody
+	public EntityRestMessage<Tindakan> get(@PathVariable String nama, @PathVariable Kelas kelas) throws ApplicationException, PersistenceException {
+		Tindakan tindakan = tindakanService.get(nama, kelas);
+		return EntityRestMessage.createTindakan(tindakan);
 	}
 	
 	@RequestMapping(method = RequestMethod.GET, value = "/keyword/{keyword}")
