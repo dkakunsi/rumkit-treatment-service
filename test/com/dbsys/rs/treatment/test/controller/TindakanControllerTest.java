@@ -19,10 +19,10 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.context.WebApplicationContext;
 
 import com.dbsys.rs.lib.Kelas;
-import com.dbsys.rs.lib.Tanggungan;
+import com.dbsys.rs.lib.Penanggung;
 import com.dbsys.rs.lib.entity.KategoriTindakan;
 import com.dbsys.rs.lib.entity.Tindakan;
-import com.dbsys.rs.lib.entity.Tindakan.Satuan;
+import com.dbsys.rs.lib.entity.Tindakan.SatuanTindakan;
 import com.dbsys.rs.treatment.repository.KategoriRepository;
 import com.dbsys.rs.treatment.repository.TindakanRepository;
 import com.dbsys.rs.treatment.service.KategoriService;
@@ -73,8 +73,8 @@ public class TindakanControllerTest {
 		tindakan.setKeterangan("Keterangan");
 		tindakan.setKode("Kode 1");
 		tindakan.setNama("Nama 1");
-		tindakan.setSatuan(Satuan.TINDAKAN);
-		tindakan.setTanggungan(Tanggungan.BPJS);
+		tindakan.setSatuan(SatuanTindakan.TINDAKAN);
+		tindakan.setPenanggung(Penanggung.BPJS);
 		tindakan.setTarif(500000l);
 		tindakan = tindakanService.save(tindakan);
 		assertEquals(count + 1, tindakanRepository.count());
@@ -96,7 +96,7 @@ public class TindakanControllerTest {
 						+ "\"kode\":\"Kode 2\","
 						+ "\"nama\":\"Nama 2\","
 						+ "\"satuan\":\"TINDAKAN\","
-						+ "\"tanggungan\":\"UMUM\","
+						+ "\"penanggung\":\"UMUM\","
 						+ "\"tarif\":\"1000000\""
 						+ "}")
 			)
