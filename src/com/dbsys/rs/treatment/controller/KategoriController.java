@@ -12,11 +12,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.dbsys.rs.lib.ApplicationException;
-import com.dbsys.rs.lib.EntityRestMessage;
-import com.dbsys.rs.lib.ListEntityRestMessage;
-import com.dbsys.rs.lib.RestMessage;
-import com.dbsys.rs.lib.entity.KategoriTindakan;
+import com.dbsys.rs.ApplicationException;
+import com.dbsys.rs.EntityRestMessage;
+import com.dbsys.rs.ListEntityRestMessage;
+import com.dbsys.rs.RestMessage;
+import com.dbsys.rs.treatment.entity.KategoriTindakan;
 import com.dbsys.rs.treatment.service.KategoriService;
 
 @Controller
@@ -30,21 +30,21 @@ public class KategoriController {
 	@ResponseBody
 	public EntityRestMessage<KategoriTindakan> simpan(@RequestBody KategoriTindakan kategori) throws ApplicationException, PersistenceException {
 		kategori = kategoriService.simpan(kategori);
-		return EntityRestMessage.createKategori(kategori);
+		return new EntityRestMessage<KategoriTindakan>(kategori);
 	}
 	
 	@RequestMapping(method = RequestMethod.GET, value = "/{id}")
 	@ResponseBody
 	public EntityRestMessage<KategoriTindakan> getById(@PathVariable Long id) throws ApplicationException, PersistenceException {
 		KategoriTindakan kategori = kategoriService.getById(id);
-		return EntityRestMessage.createKategori(kategori);
+		return new EntityRestMessage<KategoriTindakan>(kategori);
 	}
 	
 	@RequestMapping(method = RequestMethod.GET)
 	@ResponseBody
 	public ListEntityRestMessage<KategoriTindakan> getAll() throws ApplicationException, PersistenceException {
 		List<KategoriTindakan> list = kategoriService.getAll();
-		return ListEntityRestMessage.createListKategori(list);
+		return new ListEntityRestMessage<KategoriTindakan>(list);
 	}
 	
 	@RequestMapping(method = RequestMethod.GET, value = "/test/test")

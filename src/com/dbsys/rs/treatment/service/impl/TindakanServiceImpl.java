@@ -6,8 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.dbsys.rs.lib.Kelas;
-import com.dbsys.rs.lib.entity.Tindakan;
+import com.dbsys.rs.Kelas;
+import com.dbsys.rs.treatment.entity.Tindakan;
 import com.dbsys.rs.treatment.repository.TindakanRepository;
 import com.dbsys.rs.treatment.service.TindakanService;
 

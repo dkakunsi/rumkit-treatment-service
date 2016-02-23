@@ -2,8 +2,8 @@ package com.dbsys.rs.treatment.service;
 
 import java.util.List;
 
-import com.dbsys.rs.lib.Kelas;
-import com.dbsys.rs.lib.entity.Tindakan;
+import com.dbsys.rs.Kelas;
+import com.dbsys.rs.treatment.entity.Tindakan;
 
 /**
  * Interface untuk mengelola data tindakan.

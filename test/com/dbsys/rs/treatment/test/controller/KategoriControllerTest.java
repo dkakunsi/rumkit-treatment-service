@@ -18,7 +18,7 @@ import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.context.WebApplicationContext;
 
-import com.dbsys.rs.lib.entity.KategoriTindakan;
+import com.dbsys.rs.treatment.entity.KategoriTindakan;
 import com.dbsys.rs.treatment.repository.KategoriRepository;
 import com.dbsys.rs.treatment.service.KategoriService;
 import com.dbsys.rs.treatment.test.TestConfig;

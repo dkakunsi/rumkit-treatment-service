@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.dbsys.rs.lib.entity.KategoriTindakan;
+import com.dbsys.rs.treatment.entity.KategoriTindakan;
 import com.dbsys.rs.treatment.repository.KategoriRepository;
 import com.dbsys.rs.treatment.service.KategoriService;
 

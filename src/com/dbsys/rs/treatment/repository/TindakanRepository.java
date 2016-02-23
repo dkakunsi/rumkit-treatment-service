@@ -4,8 +4,8 @@ import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import com.dbsys.rs.lib.Kelas;
-import com.dbsys.rs.lib.entity.Tindakan;
+import com.dbsys.rs.Kelas;
+import com.dbsys.rs.treatment.entity.Tindakan;
 
 public interface TindakanRepository extends JpaRepository<Tindakan, Long> {
 

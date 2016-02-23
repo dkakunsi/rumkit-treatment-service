@@ -2,7 +2,7 @@ package com.dbsys.rs.treatment.service;
 
 import java.util.List;
 
-import com.dbsys.rs.lib.entity.KategoriTindakan;
+import com.dbsys.rs.treatment.entity.KategoriTindakan;
 
 /**
  * Interface untuk mengelola data kategori.
